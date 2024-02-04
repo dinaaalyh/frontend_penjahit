@@ -43,7 +43,7 @@ class MyApp extends StatelessWidget {
         "productsPage": (context) => ProductsPage(),
         "profilePage": (context) => ProfilePage(),
         "itemDetailPage": (context) => ItemDetailPage(),
-        // "itemDetailPage": (context) => CheckOutPage(),
+        "checkoutPage": (context) => CheckOutPage(),
       },
     );
   }

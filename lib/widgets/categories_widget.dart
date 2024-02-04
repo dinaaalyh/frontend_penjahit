@@ -3,6 +3,14 @@ import 'package:google_fonts/google_fonts.dart';
 
 class CategoriesWidget extends StatelessWidget {
   // const CategoriesWidget({super.key});
+  final List<String> categoryTexts = [
+    "Kebaya",
+    "Gamis",
+    "Blouse",
+    "Rok",
+    "Pasangan",
+    "Kemeja",
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -10,7 +18,7 @@ class CategoriesWidget extends StatelessWidget {
       scrollDirection: Axis.horizontal,
       child: Row(
         children: [
-          for (int i = 1; i < 5; i++)
+          for (int i = 1; i < 7; i++)
             Container(
               margin: EdgeInsets.symmetric(horizontal: 10),
               padding: EdgeInsets.symmetric(vertical: 5, horizontal: 10),
@@ -21,15 +29,16 @@ class CategoriesWidget extends StatelessWidget {
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  Image.asset(
-                    "assets/images/$i.jpg",
-                    width: 20,
-                    height: 20,
-                  ),
+                  // Image.asset(
+                  //   "assets/images/$i.jpeg",
+                  //   width: 20,
+                  //   height: 20,
+                  // ),
                   Text(
-                    "Designer Collection",
+                    categoryTexts[i - 1], // Use the corresponding text
+                    textAlign: TextAlign.center,
                     style: GoogleFonts.inter(
-                      fontSize: 10,
+                      fontSize: 11,
                       color: Colors.black,
                       fontWeight: FontWeight.w600,
                     ),

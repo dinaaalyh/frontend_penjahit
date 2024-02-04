@@ -33,7 +33,7 @@ class _ItemDetailPageState extends State<ItemDetailPage> {
         ),
         actions: [
           Padding(
-            padding: const EdgeInsets.all(20.0),
+            padding: const EdgeInsets.only(top: 0, right: 10),
             child: IconButton(
               icon: Icon(
                 FeatherIcons.shoppingBag,
@@ -53,7 +53,7 @@ class _ItemDetailPageState extends State<ItemDetailPage> {
           children: [
             Container(
               margin: EdgeInsets.symmetric(horizontal: 15),
-              padding: EdgeInsets.only(top: 0, left: 5, right: 5),
+              padding: EdgeInsets.only(top: 15, left: 5, right: 5),
               child: Row(
                 children: [
                   Padding(
@@ -63,7 +63,7 @@ class _ItemDetailPageState extends State<ItemDetailPage> {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(
-                          "Product Title",
+                          "Blouse",
                           style: GoogleFonts.inter(
                             fontSize: 16,
                             fontWeight: FontWeight.bold,
@@ -71,7 +71,7 @@ class _ItemDetailPageState extends State<ItemDetailPage> {
                           ),
                         ),
                         Text(
-                          "Rp500.000",
+                          "Rp100.000",
                           style: GoogleFonts.inter(
                             fontSize: 12.5,
                             fontWeight: FontWeight.bold,
@@ -133,7 +133,7 @@ class _ItemDetailPageState extends State<ItemDetailPage> {
                             Container(
                               padding: EdgeInsets.only(top: 5),
                               child: Icon(
-                                Icons.star_half,
+                                Icons.star,
                                 color: Colors.black,
                                 size: 14,
                               ),
@@ -147,10 +147,10 @@ class _ItemDetailPageState extends State<ItemDetailPage> {
               ),
             ),
             Container(
-              height: 300,
+              height: 330,
               decoration: BoxDecoration(
                 image: DecorationImage(
-                  image: AssetImage('assets/images/card_bg.png'),
+                  image: AssetImage('assets/images/1.jpeg'),
                   fit: BoxFit.cover,
                 ),
               ),
@@ -205,25 +205,37 @@ class _ItemDetailPageState extends State<ItemDetailPage> {
               ),
             ),
             Container(
-              height: 500,
+              padding: EdgeInsets.only(top: 0, left: 20, right: 20),
+              height: 325,
               decoration: BoxDecoration(),
               child: IndexedStack(
                 index: selected,
                 children: [
                   Container(
+                    padding: EdgeInsets.only(top: 0),
                     decoration: BoxDecoration(
-                      color: Colors.amberAccent,
+                      color: Colors.white,
                     ),
-                    padding: EdgeInsets.all(16),
-                    child: Container(
-                      height: 800,
-                      decoration: BoxDecoration(
-                        color: Colors.transparent,
-                      ),
-                      child: Center(
-                        child: ElevatedButton(
+                    margin: EdgeInsets.only(left: 15, right: 14),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        RichText(
+                          textAlign: TextAlign.justify,
+                          text: TextSpan(
+                            text:
+                                "Dapatkan penampilan yang anggun dan modern dengan blouse kami yang penuh gaya. Blouse ini dirancang untuk menonjolkan kecantikan Anda sambil memberikan kenyamanan sepanjang hari. Dibuat dengan bahan berkualitas tinggi yang lembut dan ringan, memberikan sentuhan mewah pada setiap gerakan Anda.\nBlouse ini tersedia dalam berbagai warna yang menawan, memungkinkan Anda menyesuaikannya dengan gaya pribadi Anda. Pilihan ukuran yang beragam juga memastikan bahwa setiap wanita dapat menemukan blouse yang sesuai dengan bentuk tubuh mereka. ",
+                            style: TextStyle(
+                              fontSize: 14,
+                              color: Colors.black,
+                              fontWeight: FontWeight.normal,
+                            ),
+                          ),
+                        ),
+                        SizedBox(height: 20),
+                        ElevatedButton(
                           onPressed: () {
-                            print("Button pressed!");
+                            Navigator.pushNamed(context, "cartPage");
                           },
                           style: ElevatedButton.styleFrom(
                             primary: Colors.black,
@@ -234,10 +246,9 @@ class _ItemDetailPageState extends State<ItemDetailPage> {
                             style: TextStyle(fontSize: 14, color: Colors.white),
                           ),
                         ),
-                      ),
+                      ],
                     ),
                   ),
-                  // SizedBox(height: 20),
                   Container(
                     padding: EdgeInsets.all(16),
                     decoration: BoxDecoration(
@@ -277,7 +288,7 @@ class _ItemDetailPageState extends State<ItemDetailPage> {
                             focusedBorder: OutlineInputBorder(
                               borderSide: const BorderSide(color: Colors.black),
                               borderRadius: BorderRadius.circular(
-                                  25.0), // Adjust the radius as needed
+                                  25.0), // Adjust theradius as needed
                             ),
                             fillColor: Colors.white,
                             filled: true,
@@ -330,7 +341,7 @@ class _ItemDetailPageState extends State<ItemDetailPage> {
                         Center(
                           child: ElevatedButton(
                             onPressed: () {
-                              print("Button pressed!");
+                              Navigator.pushNamed(context, "cartPage");
                             },
                             style: ElevatedButton.styleFrom(
                               primary: Colors.black,
@@ -352,307 +363,6 @@ class _ItemDetailPageState extends State<ItemDetailPage> {
           ],
         ),
       ),
-      // bottomNavigationBar: Container(
-      //   height: 60,
-      //   decoration: BoxDecoration(
-      //     color: Colors.transparent,
-      //   ),
-      //   child: Center(
-      //     child: ElevatedButton(
-      //       onPressed: () {
-      //         // Add your button's functionality here
-      //         print("Button pressed!");
-      //       },
-      //       style: ElevatedButton.styleFrom(
-      //         primary: Colors.black, // Button color
-      //         minimumSize: Size(300, 40), // Button width and height
-      //       ),
-      //       child: Text(
-      //         "Add to cart",
-      //         style: TextStyle(fontSize: 14, color: Colors.white),
-      //       ),
-      //     ),
-      //   ),
-      // ),
     );
   }
 }
-
-
-// import 'package:flutter/material.dart';
-// import 'package:google_fonts/google_fonts.dart';
-// import 'package:projek/components/button.dart';
-// import 'package:projek/widgets/item_app_bar.dart';
-// import 'package:contained_tab_bar_view/contained_tab_bar_view.dart';
-
-// class ItemDetailPage extends StatelessWidget {
-//   const ItemDetailPage({Key? key}) : super(key: key);
-
-//   @override
-//   Widget build(BuildContext context) {
-//     double screenWidth = MediaQuery.of(context).size.width;
-
-//     return Scaffold(
-//       backgroundColor: Colors.white,
-//       body: Column(
-//         children: [
-//           Expanded(
-//             child: ListView(
-//               children: [
-//                 ItemAppBar(),
-                // Container(
-                //   margin: EdgeInsets.symmetric(horizontal: 15),
-                //   padding: EdgeInsets.only(top: 0, left: 15, right: 5),
-                //   child: Row(
-                //     children: [
-                //       Padding(
-                //         padding: EdgeInsets.symmetric(vertical: 10),
-                //         child: Column(
-                //           crossAxisAlignment: CrossAxisAlignment.start,
-                //           mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                //           children: [
-                //             Text(
-                              // "Product Title",
-                              // style: GoogleFonts.inter(
-                              //   fontSize: 16,
-                              //   fontWeight: FontWeight.bold,
-                              //   color: Colors.black,
-                              // ),
-                //             ),
-                //             Text(
-                //               "Rp500.000",
-                //               style: GoogleFonts.inter(
-                //                 fontSize: 12.5,
-                //                 fontWeight: FontWeight.bold,
-                //                 color: Colors.black,
-                //               ),
-                //             ),
-                //           ],
-                //         ),
-                //       ),
-                //       Spacer(),
-                //       Padding(
-                //         padding: EdgeInsets.only(top: 0),
-                //         child: Column(
-                //           crossAxisAlignment: CrossAxisAlignment.end,
-                //           mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                //           children: [
-                //             Text(
-                //               "234 ratings",
-                //               style: GoogleFonts.inter(
-                //                 fontSize: 10,
-                //                 fontWeight: FontWeight.bold,
-                //                 color: Colors.grey,
-                //               ),
-                //             ),
-                //             Row(
-                //               children: [
-                //                 Container(
-                //                   padding: EdgeInsets.only(top: 5),
-                //                   child: Icon(
-                //                     Icons.star,
-                //                     color: Colors.black,
-                //                     size: 14,
-                //                   ),
-                //                 ),
-                //                 Container(
-                //                   padding: EdgeInsets.only(top: 5),
-                //                   child: Icon(
-                //                     Icons.star,
-                //                     color: Colors.black,
-                //                     size: 14,
-                //                   ),
-                //                 ),
-                //                 Container(
-                //                   padding: EdgeInsets.only(top: 5),
-                //                   child: Icon(
-                //                     Icons.star,
-                //                     color: Colors.black,
-                //                     size: 14,
-                //                   ),
-                //                 ),
-                //                 Container(
-                //                   padding: EdgeInsets.only(top: 5),
-                //                   child: Icon(
-                //                     Icons.star,
-                //                     color: Colors.black,
-                //                     size: 14,
-                //                   ),
-                //                 ),
-                //                 Container(
-                //                   padding: EdgeInsets.only(top: 5),
-                //                   child: Icon(
-                //                     Icons.star_half,
-                //                     color: Colors.black,
-                //                     size: 14,
-                //                   ),
-                //                 ),
-                //               ],
-                //             ),
-                //           ],
-                //         ),
-                //       ),
-                //     ],
-                //   ),
-                // ),
-//                 Padding(
-//                   padding: EdgeInsets.symmetric(horizontal: 0),
-//                   child: Image.asset(
-//                     "assets/images/card_bg.png",
-//                     width: screenWidth,
-//                     height: 300,
-//                     fit: BoxFit.cover,
-//                   ),
-//                 ),
-//               ],
-//             ),
-//           ),
-//           Expanded(
-//             child: ContainedTabBarView(
-//               tabBarProperties: TabBarProperties(
-//                 height: 40,
-//                 labelColor: Colors.black,
-//                 unselectedLabelColor: Colors.grey,
-//                 indicatorColor: Colors.black,
-//               ),
-//               tabs: [
-//                 Text("Detail"),
-//                 Text("Order"),
-//               ],
-//               views: [
-//                 SizedBox.expand(
-//                   child: Container(
-//                     child: Center(
-//                       child: Text("Detail item"),
-//                     ),
-//                   ),
-//                 ),
-//                 SizedBox.expand(
-//                   child: Container(
-//                     margin: EdgeInsets.only(left: 0),
-//                     child: Padding(
-//                       padding: EdgeInsets.only(top: 15, left: 20, right: 20),
-//                       child: Column(
-//                         children: [
-//                           TextField(
-//                             decoration: InputDecoration(
-//                               contentPadding: const EdgeInsets.symmetric(
-//                                   horizontal: 16.0, vertical: 5.0),
-//                               enabledBorder: OutlineInputBorder(
-//                                 borderSide:
-//                                     const BorderSide(color: Colors.black),
-//                                 borderRadius: BorderRadius.circular(
-//                                     25.0), // Adjust the radius as needed
-//                               ),
-//                               focusedBorder: OutlineInputBorder(
-//                                 borderSide:
-//                                     const BorderSide(color: Colors.black),
-//                                 borderRadius: BorderRadius.circular(
-//                                     25.0), // Adjust the radius as needed
-//                               ),
-//                               fillColor: Colors.white,
-//                               filled: true,
-//                               labelText: "Ukuran",
-//                             ),
-//                           ),
-//                           SizedBox(height: 10),
-//                           TextField(
-//                             decoration: InputDecoration(
-//                               contentPadding: const EdgeInsets.symmetric(
-//                                   horizontal: 16.0, vertical: 5.0),
-//                               enabledBorder: OutlineInputBorder(
-//                                 borderSide:
-//                                     const BorderSide(color: Colors.black),
-//                                 borderRadius: BorderRadius.circular(
-//                                     25.0), // Adjust the radius as needed
-//                               ),
-//                               focusedBorder: OutlineInputBorder(
-//                                 borderSide:
-//                                     const BorderSide(color: Colors.black),
-//                                 borderRadius: BorderRadius.circular(
-//                                     25.0), // Adjust the radius as needed
-//                               ),
-//                               fillColor: Colors.white,
-//                               filled: true,
-//                               labelText: "Warna",
-//                             ),
-//                           ),
-//                           SizedBox(height: 10),
-//                           TextField(
-//                             decoration: InputDecoration(
-//                               contentPadding: const EdgeInsets.symmetric(
-//                                   horizontal: 16.0, vertical: 5.0),
-//                               enabledBorder: OutlineInputBorder(
-//                                 borderSide:
-//                                     const BorderSide(color: Colors.black),
-//                                 borderRadius: BorderRadius.circular(
-//                                     25.0), // Adjust the radius as needed
-//                               ),
-//                               focusedBorder: OutlineInputBorder(
-//                                 borderSide:
-//                                     const BorderSide(color: Colors.black),
-//                                 borderRadius: BorderRadius.circular(
-//                                     25.0), // Adjust the radius as needed
-//                               ),
-//                               fillColor: Colors.white,
-//                               filled: true,
-//                               labelText: "Lingkar dada",
-//                             ),
-//                           ),
-//                           SizedBox(height: 10),
-                          // TextField(
-                          //   decoration: InputDecoration(
-                          //     contentPadding: const EdgeInsets.symmetric(
-                          //         horizontal: 16.0, vertical: 5.0),
-                          //     enabledBorder: OutlineInputBorder(
-                          //       borderSide:
-                          //           const BorderSide(color: Colors.black),
-                          //       borderRadius: BorderRadius.circular(
-                          //           25.0), // Adjust the radius as needed
-                          //     ),
-                          //     focusedBorder: OutlineInputBorder(
-                          //       borderSide:
-                          //           const BorderSide(color: Colors.black),
-                          //       borderRadius: BorderRadius.circular(
-                          //           25.0), // Adjust the radius as needed
-                          //     ),
-                          //     fillColor: Colors.white,
-                          //     filled: true,
-                          //     labelText: "Lingkar pinggang",
-                          //   ),
-                          // ),
-//                           SizedBox(height: 15),
-//                           Row(
-//                             children: [
-//                               Container(
-//                                 alignment: Alignment.center,
-//                                 height: 30,
-//                                 width: double.infinity,
-//                                 decoration: BoxDecoration(
-//                                   color: Colors.black,
-//                                   borderRadius: BorderRadius.circular(20),
-//                                 ),
-//                                 child: Text(
-//                                   "Shop now",
-//                                   style: GoogleFonts.inter(
-//                                     fontSize: 12,
-//                                     color: Color.fromARGB(255, 255, 255, 255),
-//                                     fontWeight: FontWeight.bold,
-//                                   ),
-//                                 ),
-//                               ),
-//                             ],
-//                           ),
-//                         ],
-//                       ),
-//                     ),
-//                   ),
-//                 ),
-//               ],
-//             ),
-//           ),
-//         ],
-//       ),
-//     );
-//   }
-// }

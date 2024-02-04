@@ -15,17 +15,23 @@ class ExplorePage extends StatefulWidget {
 class _ExplorePageState extends State<ExplorePage> {
   static List<ExploreModel> explores = [
     ExploreModel(
-        "https://images.unsplash.com/photo-1556905055-8f358a7a47b2?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-        "Designer Collection"),
+        "https://i.pinimg.com/736x/35/04/d2/3504d28e351863a2d1a005d1e416ae75.jpg",
+        "Kebaya"),
     ExploreModel(
-        "https://images.unsplash.com/photo-1556905055-8f358a7a47b2?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-        "Women's Suit"),
+        "https://i.pinimg.com/564x/34/b9/95/34b995a96a89319e13239f3e25001220.jpg",
+        "Gamis"),
     ExploreModel(
-        "https://images.unsplash.com/photo-1556905055-8f358a7a47b2?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-        "Men's"),
+        "https://i.pinimg.com/564x/9b/7b/d8/9b7bd8c98649c0d6131242de095ef110.jpg",
+        "Blouse"),
     ExploreModel(
-        "https://images.unsplash.com/photo-1556905055-8f358a7a47b2?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-        "Kids"),
+        "https://i.pinimg.com/564x/15/3d/91/153d917c0042750c012835faff811cf6.jpg",
+        "Rok"),
+    ExploreModel(
+        "https://i.pinimg.com/564x/ea/62/b9/ea62b93ea16f2242b633c0154476e1c6.jpg",
+        "Pasangan"),
+    ExploreModel(
+        "https://i.pinimg.com/564x/96/63/cd/9663cd3898b27e86f97974d1a7a25056.jpg",
+        "Kemeja"),
   ];
 
   // the list that we're going to display and filter
@@ -115,27 +121,29 @@ class _ExplorePageState extends State<ExplorePage> {
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(12.0),
                   ),
-                  child: Stack(
-                    alignment: Alignment.center,
-                    children: [
-                      Ink.image(
-                        image: NetworkImage(display_list[index].image!),
-                        height: 200,
-                        fit: BoxFit.cover,
-                        child: InkWell(
-                          onTap: () {},
+                  child: InkWell(
+                    onTap: () {
+                      Navigator.pushNamed(context, "productsPage");
+                    },
+                    child: Stack(
+                      alignment: Alignment.center,
+                      children: [
+                        Ink.image(
+                          image: NetworkImage(display_list[index].image!),
+                          height: 200,
+                          fit: BoxFit.cover,
                         ),
-                      ),
-                      Text(
-                        display_list[index].categories!,
-                        style: GoogleFonts.inter(
-                          fontWeight: FontWeight.w600,
-                          color: Colors.white,
-                          fontSize: 20,
-                          fontStyle: FontStyle.italic,
+                        Text(
+                          display_list[index].categories!,
+                          style: GoogleFonts.inter(
+                            fontWeight: FontWeight.w600,
+                            color: Colors.white,
+                            fontSize: 20,
+                            fontStyle: FontStyle.italic,
+                          ),
                         ),
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
                 ),
               ),

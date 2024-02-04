@@ -17,7 +17,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  var explore = ["Designer Collection", "Women's Suit", "Men", "Kids"];
+  var explore = ["Kebaya", "Gamis", "Blouse", "Rok", "Pasangan", "Kemeja"];
   var selectedExplore = 0;
 
   //State class

@@ -11,7 +11,7 @@ class ProductModel {
 }
 
 var products = [
-  ProductModel(image: "product1.png", name: "Product 1", price: 500000),
-  ProductModel(image: "product1.png", name: "Product 2", price: 600000),
-  ProductModel(image: "product1.png", name: "Product 3", price: 700000),
+  ProductModel(image: "1.jpeg", name: "Blouse", price: 100000),
+  ProductModel(image: "2.jpeg", name: "Gamis", price: 300000),
+  ProductModel(image: "3.jpeg", name: "Rok", price: 200000),
 ];

@@ -46,7 +46,7 @@ class _CheckOutPageState extends State<CheckOutPage> {
                       height: 5,
                     ),
                     Container(
-                      height: 90,
+                      height: 85,
                       width: 335,
                       padding:
                           EdgeInsets.symmetric(horizontal: 22, vertical: 10),
@@ -63,7 +63,7 @@ class _CheckOutPageState extends State<CheckOutPage> {
                             height: 5,
                           ),
                           Text(
-                            "AddressAddressAddressAddressAddressAddress",
+                            "Jl. Cipto Mk Margasari No. 41",
                             style: GoogleFonts.inter(
                               fontSize: 13,
                               color: Colors.black,
@@ -71,7 +71,7 @@ class _CheckOutPageState extends State<CheckOutPage> {
                             ),
                           ),
                           SizedBox(
-                            height: 5,
+                            height: 15,
                           ),
                           Text(
                             "Change address",
@@ -91,7 +91,7 @@ class _CheckOutPageState extends State<CheckOutPage> {
                 height: 10,
               ),
               Container(
-                height: 205,
+                height: 210,
                 width: 335,
                 decoration: BoxDecoration(),
                 child: Column(
@@ -174,7 +174,7 @@ class _CheckOutPageState extends State<CheckOutPage> {
                 height: 20,
               ),
               Container(
-                height: 116,
+                height: 90, // jarak summarry ke voc
                 width: 335,
                 decoration: BoxDecoration(),
                 child: Column(
@@ -196,7 +196,7 @@ class _CheckOutPageState extends State<CheckOutPage> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           SizedBox(
-                            height: 5,
+                            height: 25,
                           ),
                           Text(
                             "Enter voucher code",
@@ -239,7 +239,7 @@ class _CheckOutPageState extends State<CheckOutPage> {
                   ],
                 ),
               ),
-              SizedBox(height: 15),
+              SizedBox(height: 1),
               SizedBox(
                 height: 180,
                 width: 335,
@@ -309,7 +309,7 @@ class _CheckOutPageState extends State<CheckOutPage> {
                               ),
                               Spacer(),
                               Text(
-                                "\Rp90.000",
+                                "\Rp200.000",
                                 style: GoogleFonts.inter(
                                   fontSize: 13,
                                   color: Color(0xff516971),
@@ -331,7 +331,7 @@ class _CheckOutPageState extends State<CheckOutPage> {
                               ),
                               Spacer(),
                               Text(
-                                "\Rp100.000",
+                                "\Rp210.000",
                                 style: GoogleFonts.inter(
                                   fontSize: 13,
                                   color: Color(0xff516971),
@@ -376,7 +376,7 @@ class _CheckOutPageState extends State<CheckOutPage> {
                   ),
                 ),
                 Text(
-                  "Rp100.000",
+                  "Rp210.000",
                   style: GoogleFonts.inter(
                     fontSize: 20,
                     color: Color(0xff516971),
